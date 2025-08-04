@@ -1,0 +1,52 @@
+<% layout("/layouts/boilerplates") %>
+<body>
+    <div class="row">
+        <div class="col-8" offset-2>
+            <h3>edit this list</h3>
+    <form method="POST" action="/listings/<%=listing._id%>?_method=put" enctype="multipart/form-data">
+        <div>
+            <label for="title">title</label>
+            <input type="text" name="listing[title]" value="<%=listing.title%>" class="form-control">
+        </div>
+        
+        <br><br>
+        <div class="mb-3">
+            <label for="description">Description</label>
+            <textarea name="listing[description]"  class="form-control" ><%=listing.description%></textarea>
+        </div>
+        <br><br>
+
+        <div>
+            <img src="<%=originalimageUrl %>" >
+        </div>
+        <br><br>
+
+        <div>
+            <label for="image">Upload new Image</label>
+            <input type="file" name="listing[image]"  class="form-control">
+        </div>
+        <br><br>
+
+        <div>
+            <label for="price">price</label>
+            <input type="number" name="listing[price]" value="<%=listing.price%>" class="form-control">
+        </div>
+        <br><br>
+
+        <div>
+            <label for="location">location</label>
+            <input type="text" name="listing[location]" value="<%=listing.location%>" class="form-control">
+        </div>
+        
+        <br><br>
+        <div>
+            <label for="country">country</label>
+            <input type="text" name="listing[country]" value="<%=listing.country%>" class="form-control">
+        </div>
+        
+        <br><br>
+        <button class="btn btn-dark edit-btn">submit</button>
+    </form>
+        </div>
+    </div>
+</body>
